@@ -3,10 +3,19 @@
 <ul>
 	<% @recipes.each do |recipe| %>
 	<li>
-		<%= recipe.name %>
-	   <%= recipe.stuff %>
-	   <%= recipe.calories %>
+		<%= link_to recipe.name , recipe %>
+		<p>
+			<%= truncate(recipe.stuff, length:15, separator: ' ' ) %>
+		</p>
+
+	   <p>
+	   	   <%= formata_caloria(recipe) %>
+	   </p>
+	 
 	</li>
 	
 	<% end %>
 </ul>
+<br>
+
+<%= link_to 'Nova Receita' , new_recipe_path %>
