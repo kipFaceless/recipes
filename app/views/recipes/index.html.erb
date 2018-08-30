@@ -1,9 +1,12 @@
-<h1>Receitas</h1>
+<h1> <%= pluralize(@recipes.count, 'Receita', 'Receitas') %></h1>
 
-<ul>
+
 	<% @recipes.each do |recipe| %>
-	<li>
-		<%= link_to recipe.name , recipe %>
+	<article>
+		<header>
+		<h2><%= link_to recipe.name , recipe %></h2>
+			<%= image(recipe) %>
+		</header>
 		<p>
 			<%= truncate(recipe.stuff, length:15, separator: ' ' ) %>
 		</p>
@@ -11,11 +14,28 @@
 	   <p>
 	   	   <%= formata_caloria(recipe) %>
 	   </p>
-	 
-	</li>
+	   <strong>Tempo de Preparo</strong>
+	   <p>
+	   	<%= recipe.duration.to_formatted_s(:time) %> Min
+	   </p>
+	 <table>
+	 	<tr>
+	 		<th>Modo de Preparo</th>
+	 		<td><%=recipe.prepare_mode %></td>
+	 	</tr>
+	 	<tr>
+	 		<th>Custo do Prato</th>
+	 		<td><%= number_to_currency(recipe.cost) %></td>
+
+	 	</tr>
+
+
+	 </table>
+	
 	
 	<% end %>
-</ul>
+	</article>
+
 <br>
 
 <%= link_to 'Nova Receita' , new_recipe_path %>
