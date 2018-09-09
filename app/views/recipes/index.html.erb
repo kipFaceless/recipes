@@ -1,4 +1,6 @@
+<div class="container">
 <h1> <%= pluralize(@recipes.count, 'Receita', 'Receitas') %></h1>
+<small class="nova_receita"> <%= link_to 'Nova Receita' , new_recipe_path %> </small>
 
 
 	<% @recipes.each do |recipe| %>
@@ -38,4 +40,5 @@
 
 <br>
 
-<%= link_to 'Nova Receita' , new_recipe_path %>
+
+</div>
