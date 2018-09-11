@@ -1,5 +1,8 @@
-<div class="container">
+
 <%= form_for(@recipe) do |f| %>
+
+<%= render 'layouts/errors' %>
+
 <p class="form-group">
 	<%= f.label :Nome  %><br>
 	<%= f.text_field :name , class:"form-control"%>
@@ -11,7 +14,7 @@
 
 <p class="form-group">
 	<%= f.label :Tipo  %><br>
-	<%= f.text_field :kind , class:"form-control" %>
+	<%= f.select :kind , Recipe::KIND , prompt: 'Escolha sua opção',  class:"form-control" %>
 </p>
 
 <p class="form-group">
@@ -50,4 +53,3 @@
 </p>
 <% end %>
 
-</div>
