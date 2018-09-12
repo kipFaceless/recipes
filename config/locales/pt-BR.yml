@@ -6,7 +6,7 @@ pt-BR:
       recipe:
         name: Nome da receita
         stuff: Ingredientes
-        calories: calorias
+        calories: Calorias
         kind: Categoria
         prepare_mode: Modo de preparo
         cost: Custo
