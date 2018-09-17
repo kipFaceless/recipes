@@ -1,7 +1,7 @@
 
 <%= form_for(@recipe) do |f| %>
 
-<%= render 'layouts/errors' %>
+<%= render 'layouts/errors', object:@recipe %>
 
 <p class="form-group">
 	<%= f.label :Nome  %><br>
@@ -39,7 +39,7 @@
 
 <p class="form-group">
 	<%= f.label :Poster  %><br>
-	<%= f.text_field :poster, placeholder: "GIF, JPG, JPG, ou PNG" , class:"form-control"%>
+	<%= f.file_field :poster, placeholder: "GIF, JPG, JPG, ou PNG" , class:"form-control"%>
 </p>
 
 <p class="form-group">
