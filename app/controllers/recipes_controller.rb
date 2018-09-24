@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 	def index
-	@recipes = Recipe.created_at 	
+	@recipes = Recipe.created_at
 	end
 
 
